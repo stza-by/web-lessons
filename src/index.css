@@ -2,3 +2,7 @@ body {
   margin: auto;
   width: 50%;
 }
+
+.form-submit{
+  margin-top: 10px;
+}
