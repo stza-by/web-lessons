@@ -1,0 +1,11 @@
+URL - Uniform Resource Locator (унифицированный определитель местонахождения ресурса) - http://handynotes.ru
+
+DNS - система доменных имён. У любого устройства в сети есть свой числовой адрес, он называется IP-адрес.
+      Но людям удобнее запоминать буквы - доменные имена. DNS просто помогает найти IP-адрес по доменному имени.
+      Пример: 173.194.44.40 это IP-адрес, а google.com - доменное имя, которое ему соответствует
+
+HTTP - HyperText Transfer Protocol - протокол передачи гипертекста
+
+HTML - HyperText Markup Language - язык разметки гипертекста
+
+https://docs.google.com/presentation/d/1b9nc4DgiIUSOa-NVZgdNrx8bB2jKHUJt1dTvWzaVplk/edit?usp=sharing
