@@ -1,8 +1,23 @@
+
 body {
-  margin: auto;
-  width: 50%;
+    background-image: url("back.jpg");
+    background-size: cover;
 }
 
-.form-submit{
-  margin-top: 10px;
+h2 {
+    color: darkred;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 5px solid rgb(223, 222, 111);
 }
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+strong {
+    color: #DFDE6F;
+}
+
+
