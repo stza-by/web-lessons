@@ -1,8 +1,12 @@
 body {
-  margin: auto;
-  width: 50%;
+  background-color: azure;
 }
 
-.form-submit{
+form {
+  margin: auto;
+  width: 300px;
+}
+
+.form-submit {
   margin-top: 10px;
 }
