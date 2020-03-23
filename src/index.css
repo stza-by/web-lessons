@@ -1,5 +1,5 @@
-
-body {
+/* Element */
+html {
     background-image: url("back.jpg");
     background-size: cover;
 }
@@ -11,15 +11,32 @@ h2 {
     border-bottom: 5px solid rgb(223, 222, 111);
 }
 
-h2.header {
-    font-family: monospace;
-}
-
 li {
     list-style: none;
     display: inline-block;
 }
 
+/* .class */
 .highlight {
     color: #DFDE6F;
+}
+
+.center-text {
+ text-align: center;
+}
+
+/* element.class */
+h2.header {
+    font-family: monospace;
+}
+
+/* id */
+#the-last {
+    background-color: rgba(0, 255, 0, 0.2);
+    width: fit-content;
+}
+
+/* own tag */
+own {
+    color: greenyellow;
 }
