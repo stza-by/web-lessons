@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Forms</title>
+</head>
+
+<body>
+
+<form method="get">
+    <h2>Forms</h2>
+    <p>Name</p> <input type="text" name="name" required>
+    <p>Email</p> <input type="email" name="email">
+    <p>Birthday</p> <input type="date" name="birthday">
+
+    <p>Gender</p>
+    <input type="radio" name="gender" value="male"> <span>Male</span>
+    <input type="radio" name="gender" value="female"> <span>Female</span>
+    <input type="radio" name="gender" value="other"> <span>Other</span> <br>
+
+    <p>Pets</p>
+    <input type="checkbox" name="pet_cat"> <span>Cat</span>
+    <input type="checkbox" name="pet_dog"> <span>Dog</span>
+
+    <p>Car</p>
+    <select name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="audi">Audi</option>
+    </select>
+
+    <div class="form-submit">
+        <input type="submit" value="Registration">
+        <input type="reset" value="Reset">
+    </div>
+
+    <!--
+    ?
+    name=Stepan
+    &email=Stef41838%40mail.ru
+    &birthday=2020-03-07
+    &gender=male
+    &pet_cat=on-->
+</form>
+
+</body>
+
+</html>
