@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Изменение типа элемента</title>
+
+    <style>
+      body {
+        font-size: 20px;
+      }
+
+      p.inline {
+        display: inline;
+      }
+
+      a.inline {
+        display: block;
+        margin: 20px;
+        background-color: aqua;
+      }
+
+      .inline-block-box p {
+        background-color:cadetblue;
+        height: 50px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Свойство dispaly</h1>
+
+    <p>
+      Мы можем управлять типом элемента (строчный или блочный) с помощью css
+      свойства display
+    </p>
+
+    <p class="inline">
+      Тег p является блочным элементом, но с помощью свойства display: inline
+      можем сделать его строчным
+    </p>
+
+    <p class="inline">
+      Теперь тег p будет вести себя как строчный (не имеет вертикальных
+      отступов, не имеет переносов на новую строку)
+    </p>
+
+    <a href="/">Обычная ссылка</a>
+
+    <a class="inline" href="/">Блочная ссылка</a>
+
+    <p>Существует тип элементов, который объеденяет в себе свойства 
+      строчных и блочных элементов. Такие элементы задаються с помощью 
+      свойства display: inline-block
+    </p>
+
+
+    <div class="inline-block-box">
+
+      <p>Блок</p>
+      <p>Еще один блок</p>
+      <p>И еще один блок</p>
+    </div>
+  </body>
+</html>

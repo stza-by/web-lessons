@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="title">Блочные элементы</div>
+    <div>Блочные элементы по-умаолчанию занимают всю доступную ширину.</div>
+    <div>Высота блока вычисляется исходя из содержимого</div>
+
+    <div class="size">
+      Для блочных элеменов возможно задать высоту и ширину с помощъю свойств
+      height & width
+    </div>
+
+    <div class="border">И строчные и блочные элементы могут иметь рамку</div>
+
+    <div class="border padding">
+      С помощью свойства padding можно задать расстояние от внутреннего
+      содержания до рамки
+    </div>
+
+    <div class="border margin">
+      Для задания отступов от внешней границы до соседних или родительского
+      элементов используется свойство margin
+    </div>
+
+    <div class="border margin collapse">
+      Внешние отступы по вертикали не складваются, а выбирается большее значение
+    </div>
+
+    <div class="inline-elements">
+      Отличия строчных элементов от блочных:
+      <span>
+        1. Не имеют переновсов строки и выстраиваются друг за другом в одну
+        строку
+      </span>
+      <br />
+
+      <span class="inline-size">
+        2. Не реагируют на изменения ширины и высоты
+      </span>
+      <br />
+
+      <span class="inline-size">
+        3. Воспринимают только горизонтальные параметры
+        <span class='inline-margin'>margin</span> и <span class="inline-padding">padding</span>
+      </span>
+      <br />
+
+    </div>
+  </body>
+</html>

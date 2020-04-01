@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Фоны</title>
+
+    <style>
+      body {
+        font-size: 40px;
+        background-color: coral;
+        width: 60%;
+        margin: auto;
+        background-image: url('https://images.pexels.com/photos/1227520/pexels-photo-1227520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+        background-attachment: fixed;
+      }
+
+      .block {
+        text-align: center;
+        margin: 20px;
+        height: 200px;
+        border: 2px solid gold;
+        border-radius: 20px;
+      }
+
+      .color1 {
+        background-color: green;
+      }
+
+      .color2 {
+        background-color: #806882
+      }
+
+      .color3 {
+        background-color: rgb(104, 130, 120, 0.3);
+      }
+
+      .color4 {
+        background-image: url('img/photo.jpg');
+        /* 
+        height: 467px;    
+        width: 700px;     
+        background-size: 100% 100%;
+        */
+        background-size: cover;
+      }
+
+      .color5 {
+        background-image: url('img/photo.jpg');
+        background-size: 150px 100px;
+        background-repeat: repeat-x;
+        /*
+        repeat, no-repeat, repeat-x, repeat-y
+        */
+      }
+
+      .color6 {
+        background-image: url('img/logo.svg');
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        background-position: 100px 100px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="block color1"> Блок 1</div>
+    <div class="block color2"> Блок 2</div>
+    <div class="block color3"> Блок 3</div>
+    <div class="block color4"> Блок 4</div>
+    <div class="block color5"> Блок 4</div>
+    <div class="block color6"> Блок 6</div>
+
+  </body>
+</html>

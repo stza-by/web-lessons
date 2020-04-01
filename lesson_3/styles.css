@@ -1,0 +1,68 @@
+div {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 30px;
+  font-family: 'Comic Sans MS';
+}
+
+.title {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+
+.size {
+  height: 150px;
+  width: 300px;
+}
+
+.border {
+  width: fit-content;
+  border-width: 3px;
+  border-style: solid;
+  border-color: brown;
+  /* border: 5px solid red; */
+}
+
+.padding {
+  width: 500px;
+  border: 10px solid blueviolet;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-bottom: 15px;
+  padding-right: 20px;
+
+  /* padding: 10px;
+  padding: 5px 10px;
+  padding: 5px 10px 15px;
+  padding: 5px 10px 15px 20px; */
+}
+
+.margin {
+  border: 15px solid green;
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+.collapse {
+  margin-top: 20px;
+}
+
+.inline-size {
+  width: 100px;
+}
+
+.inline-margin {
+  margin: 30px;
+}
+
+.inline-padding {
+  padding: 20px;
+}
+
+.inline-margin,
+.inline-padding {
+  border: 2px solid #fc6f03;
+}
+
+
