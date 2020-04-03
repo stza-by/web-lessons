@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Поток документа</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      .float2 {
+        float: left;
+        width: 20%;
+        margin-right: 5%;
+      }
+
+      .float3 {
+        float: left;
+        width: 30%;
+        margin-right: 5%;
+      }
+
+      .float4 {
+        float: right;
+        width: 20%;
+      }
+
+      .float5 {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="case-1">
+        <div class="block">Элемент 1</div>
+        <div class="block float-1">Элемент 2</div>
+        <div class="block float-2">Элемент 3</div>
+        <div class="block float-3">Элемент 4</div>
+      </div>
+
+      <div class="case-2">
+        <div class="block">Элемент 1</div>
+        <div class="block float2">Элемент 2</div>
+        <div class="block float3">Элемент 3</div>
+        <div class="block float4">Элемент 4</div>
+        <div class="block  float5">Элемент 5</div>
+      </div>
+    </div>
+  </body>
+</html>

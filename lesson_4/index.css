@@ -1,0 +1,30 @@
+.page-container {
+  width: 400px;
+  margin: 10px auto;
+  color: #a12300;
+  box-sizing: border-box;
+}
+
+.block {
+  border: 3px dashed gray;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+.float-1{
+  float: left;
+  width: 40%;
+  height: 60px;
+}
+
+.float-2 {
+  float: right;
+  width: 40%;
+  height: 60px;
+}
+
+.float-3 {
+  clear: both;
+  height: 200px;
+}

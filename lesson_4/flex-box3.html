@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox - 3</title>
+  </head>
+
+  <style>
+    .container {
+      margin: auto;
+      border: 2px solid green;
+      width: 50%;
+      height: fit-content;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      padding-bottom: 20px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: darkgrey;
+    }
+
+    .picture {
+      display: flex;
+      justify-content: center;
+    }
+
+    a:hover {
+      color: darkred;
+    }
+
+  </style>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="../lesson_3/img/logo.svg" alt="" />
+      </div>
+      <div class="menu">
+        <div>
+          <a href="#">Фото</a>
+        </div>
+        <div>
+          <a href="#">Видео</a>
+        </div>
+        <div>
+          <a href="#">Сохранить</a>
+        </div>
+        <div>
+          <a href="#">Удалить</a>
+        </div>
+      </div>
+
+      <div class="picture">
+        <img src="../lesson_3/img/spinner.gif" alt="" />
+      </div>
+
+    </div>
+  </body>
+</html>
