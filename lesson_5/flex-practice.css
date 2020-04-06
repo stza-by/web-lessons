@@ -1,0 +1,157 @@
+body {
+  background-color: #BBB;
+}
+
+h1, h2, h3 {
+  margin: 20px 0;
+}
+
+/* example 1 */
+.form-container {
+  max-width: 450px;
+  margin: 20px auto 0 auto;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.form-row {
+  display: flex;
+  padding: 10px 0;
+}
+
+.form-row label {
+  flex-basis: 110px;
+}
+
+.form-row input {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+/* example 2 */
+
+.column-layout {
+  /* box-sizing; */
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 90%;
+  margin: 40px auto 0 auto;
+  line-height: 1.5;
+  padding: 20px 40px;
+  display: flex;
+  align-items: baseline;
+}
+
+.main-column {
+  order: 2;
+  flex-grow: 3;
+  flex-basis: 0;
+}
+
+.sidebar-1 {
+  order: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.sidebar-2 {
+  order: 3;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* Example - 3 */
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 30px auto;
+  box-sizing: border-box;
+}
+
+.card {
+  padding: 10px;
+  width: 30%;
+}
+
+.card:nth-child(1) {background-color: #c0dbe2;}
+.card:nth-child(2) {background-color: #cdf1c3;}
+.card:nth-child(3) {background-color: #ccb9da;}
+
+/* Example - 4 */
+.fixed-size-container {
+  display: flex;
+  width: 90%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin: 40px auto 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.fixed-size {
+  width: 150px;
+  height: 100px;
+  background-color:  #990b47;
+  color: #fff;
+  font-size: 50px;
+  line-height: 100px;
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+
+/* Example - 5 */
+.banner {
+  display: flex;
+  width: 60%;
+  height: 400px;
+  margin: 40px auto 40px auto;
+  background-color: #2a2a2a;
+
+}
+
+.center-me {
+  font-size: 50px;
+  color: #fff;
+   margin: auto; 
+}
+
+/* Example - 6 */
+.combine-container {
+  width: 90%;
+  line-height: 1.5;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+}
+
+.first {
+  background-color: #fff;
+  flex: 1;
+  padding: 20px;
+}
+
+.second {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-1 {
+  padding: 20px;
+  background-color: #c0dbe2;
+  flex: 1;
+}
+
+.second-2 {
+  padding: 20px;
+  background-color: #cdf1c3;
+  flex: 1;
+}
+
+
+
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Селекторы</title>
+
+    <style>
+      .page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .elements, .elements-2 {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+      }
+
+      .elements div, .elements-2 div {
+        border: 2px dashed green;
+        padding: 10px;
+      }
+
+      .elements div:first-child {
+        background-color: deeppink;
+      }
+
+      .elements div:last-child {
+        background-color: gold;
+      }
+
+      .elements div:nth-child(2) {
+        background-color: gray;
+      }
+
+      .elements div:nth-child(3) {
+        background-color: rgb(29, 100, 22);
+      }
+
+      .btn {
+        margin: 40px;
+      }
+
+      .btn:hover {
+        width: 100px;
+        cursor: pointer;
+        cursor: progress;
+        cursor: not-allowed;
+      }
+      /* even, odd */
+
+      .elements-2 div:not(.filtered) {
+        border-radius: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>Псевдоклассы</h1>
+
+      <div class="elements">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+    
+      <button class='btn'>Click me</button>
+
+    
+      <div class="elements-2">
+        <div>1</div>
+        <div>2</div>
+        <div class='filtered'>3</div>
+        <div class='filtered-2'>4</div>
+      </div>
+    
+    </div>
+  </body>
+</html>

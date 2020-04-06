@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+
+  <style>
+
+    .flex-container-1 {
+      display: flex;
+      height: 400px;
+      justify-content: center;
+      align-items: center;
+      /* flex-direction: column; */
+    }
+
+    .flex-container-1 > .element {
+      background-color: #5480c7;
+      width: 200px;
+      height: 200px;
+      flex-basis: 100%;
+    }
+
+    .flex-container-2 {
+      display: flex;
+      border: 1px dotted #5480c7;
+      height: 200px;
+      padding: 10px;
+    }
+
+    .flex-container-2 .element {
+      background-color: #5480c7;
+      margin-right: 10px;
+    }
+
+    .grow-1 {
+      flex-grow: 1;
+    }
+
+    .grow-2 {
+      flex-grow: 2;
+    }
+
+    .flex-shrink {
+      display: flex;
+      width: 500px;
+      height: 100px;
+      /* flex-wrap: wrap; */
+    }
+
+    .flex-shrink .element1 {
+      background-color: #05ffb0;
+      width: 300px;
+      flex-shrink: 1;
+    }
+    .flex-shrink .element2 {
+      background-color: #ff3860;
+      width: 200px;
+      /* flex-shrink: 0; */
+    }
+    .flex-shrink .element3 {
+      background-color: #b86bff;
+      width: 200px;
+      /* flex-shrink: 0; */
+    }
+  </style>
+</head>
+<body>
+  <h2>Еще немного про Flexbox</h2>
+  
+  <h3>flex-basis</h3>
+  <div class='flex-container-1'>
+      <div class='element'></div>
+  </div>
+
+  <h3>flex-grow</h3>
+
+  <div class='flex-container-2'>
+    <div class='element grow-1'>Блок 1</div>
+    <div class='element grow-2'>Блок 2</div>
+</div>
+
+<h3>flex-shrink</h3>
+
+  <div class='flex-shrink'>
+      <div class='element1'>Блок 1</div>
+      <div class='element2'>Блок 2</div>
+      <div class='element3'>Блок 3</div>
+  </div>
+
+</body>
+</html>
