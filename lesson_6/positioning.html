@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position</title>
+    <style>
+      .block {
+        position: static;
+        margin-bottom: 20px;
+        padding: 10px;
+        color: white;
+        background-color: #3a78a1;
+      }
+
+      .relative {
+        position: relative;
+        top: 10px;
+        /* margin-bottom: 20px; */
+        /* left, right,  */
+      }
+
+      .absolute {
+        position: absolute;
+        width: 50%;
+        background-color: brown;
+        height: 100px;
+        left: 100px;
+        /* top: 400px; */
+        /* right: 10px; */
+        bottom: 50px;
+        z-index: 100;
+      }
+
+      .absolute-container {
+        position: relative;
+      }
+
+      .fixed-container .block {
+        height: 300px;
+      }
+      
+      .fixed {
+        width: 50px;
+        height: 50px !important;
+        border-radius: 50%;
+        position: fixed;
+        background-color: coral;
+        bottom: 10px;
+        right: 20px;
+      }
+
+      .z {
+        position: relative;
+        z-index: 2;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>Относительное позифионирование</h2>
+    <div class="block">Блок 1</div>
+    <div class="block relative">Блок 2</div>
+    <div class="block">Блок 3</div>
+
+    <h2>Абсолютное позиционирование</h2>
+    <div class="absolute-container">
+      <div class="block z">Блок 1</div>
+      <div class="block absolute">Блок 2</div>
+      <div class="block">Блок 3</div>
+    </div>
+
+    <h2>Фиксированое позиционирование</h2>
+    <div class="fixed-container">
+      <div class="block">Блок 1</div>
+      <div class="block">Блок 2</div>
+      <div class="block">Блок 3</div>
+      <div class="block fixed">Блок 4 fixed</div>
+    </div>
+  </body>
+</html>

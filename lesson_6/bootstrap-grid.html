@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap GRID</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      h2 {
+        font-size: 24px;
+      }
+
+      div[class*="col"] {
+        background-color: gray;
+        height: 80px;
+        border: 2px solid red;
+        color: #fff;
+        font-size: 18px;
+      }
+      .row {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Bootstrap 4</h2>
+
+      <h2>Сетка</h2>
+
+      <h2>Колонки одинаковой ширины</h2>
+
+      <div class="ex-1">
+        <div class="row">
+          <div class="col">1 из 2</div>
+          <div class="col">2 из 2</div>
+        </div>
+
+        <div class="row">
+          <div class="col">1 из 3</div>
+          <div class="col">2 из 3</div>
+          <div class="col">3 из 3</div>
+        </div>
+      </div>
+
+      <h2>Установка ширины отдельной колонки</h2>
+
+      <div class="ex-2">
+        <div class="row">
+          <div class="col">1 из 3</div>
+          <div class="col-2">2 из 3 (широкое)</div>
+          <div class="col">3 из 3</div>
+        </div>
+        <div class="row">
+          <div class="col">1 из 3</div>
+          <div class="col-5">2 из 3 (широкое)</div>
+          <div class="col">3 из 3</div>
+        </div>
+      </div>
+
+      <h3>Колонка переменной ширины</h3>
+      <div class="row">
+        <div class="col">1 из 3</div>
+        <div class="col-sm-auto">Контен</div>
+        <div class="col col-md-2">3 из 3</div>
+      </div>
+    </div>
+  </body>
+</html>
