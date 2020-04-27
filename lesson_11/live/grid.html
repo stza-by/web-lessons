@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS Grid</title>
+
+    <style>
+      .grid-container {
+        display: grid;
+
+        grid-template-columns: 200px auto 100px;
+
+        grid-template-rows: 50px 100px;
+
+        gap: 20px;
+
+        margin-bottom: 3em;
+      }
+
+      .grid-container-2 {
+        display: grid;
+
+        /*  grid-template: 70px 100px 50px / 2fr 1fr;
+         */
+        /* 1fr ... 1fr  */
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 10px;
+        row-gap: 30px;
+        /* gap: 1em; */
+        margin-bottom: 40px;
+      }
+
+      .grid-container-3 {
+        display: grid;
+
+        grid-template: 50px 400px 50px / repeat(12, 1fr);
+      }
+
+      div.header {
+        background-color: #ff6f69;
+
+        /* grid-column-start: 1;
+        grid-column-end: 3; */
+
+        grid-column: 2 / -1;
+      }
+
+      div.menu {
+        /* grid-row-start: 1;
+        grid-row-end: -1; */
+
+        grid-row: 1 / 4
+      }
+
+      div.content {
+        background-color: #96aeb4;
+        grid-column: 2 / -1;
+      }
+
+      div.footer {
+        background-color: #ffcc5c;
+        grid-column: 2 / -1;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container grid-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+
+    <div class="container grid-container-2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+
+    <div class="container grid-container-3">
+      <div class="header">ЗАГОЛОВОК</div>
+      <div class="menu">МЕНЮ</div>
+      <div class="content">КОНТЕНТ</div>
+      <div class="footer">ПОДВАЛ</div>
+    </div>
+  </body>
+</html>

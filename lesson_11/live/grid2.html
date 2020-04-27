@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>GRID area</title>
+
+    <style>
+
+
+      html, body {
+        height: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0 5px 0 5px;
+      }
+
+      .grid-container-1 {
+        height: 100%;
+        display: grid;
+        gap: 4px;
+        grid-template: 40px 1fr 40px / repeat(12, 1fr);
+        
+        grid-template-areas:
+          /* h - header
+           m - menu 
+           c - content
+           f - footer
+           */
+        "m . h h h h h h h h h ."
+        "m c c c c c c c c c c ."
+        "m . f f f f f f f f f .";
+      }
+
+      div.header {
+        background-color: #ff6f69;
+        grid-area: h;
+        /* grid-column: 1 / -1; */
+      }
+
+      div.menu {
+        grid-area: m;
+        /* grid-column: 1 / 2; */
+      }
+
+      div.content {
+        background-color: #96aeb4;
+        grid-area: c;
+        /* grid-column: 2 / -1; */
+      }
+
+      div.footer {
+        background-color: #ffcc5c;
+        grid-area: f;
+        /* grid-column: 1 / -1; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container grid-container-1">
+      <div class="header">ЗАГОЛОВОК</div>
+      <div class="menu">МЕНЮ</div>
+      <div class="content">КОНТЕНТ</div>
+      <div class="footer">ПОДВАЛ</div>
+    </div>
+  </body>
+</html>

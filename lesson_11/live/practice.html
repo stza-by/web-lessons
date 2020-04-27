@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Practice</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+
+      .container {
+        font-size: 1.5em;
+        color: #fff;
+      }
+
+      .main-nav {
+        margin: 0;
+        list-style: none;
+        display: flex;
+        padding: 0;
+      }
+
+      .main-nav > li {
+        padding: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .nav-contacts {
+        margin-left: auto;
+      }
+
+      .green {
+        background-color: #56b870;
+      }
+
+      .red {
+        background-color: #c655be;
+      }
+
+      .blue {
+        background-color: #764af0;
+      }
+
+      .pic {
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .grid-container {
+          display: grid;
+          padding: 40px;
+
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 20px;
+          grid-auto-rows: 400px;
+      }
+
+      .grid-container > div {
+          background-color: #6e6b78;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .grid-container > div:hover {
+        box-shadow: inset 5px 5px 3px black;
+      }
+
+      .white-green {
+        background-color: #1e2b18;
+      }
+
+      .footer {
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container green nav">
+      <ul class="main-nav">
+        <li><a href="">Company</a></li>
+        <li><a href="">Team</a></li>
+        <li class="nav-contacts"><a href="">Contacts</a></li>
+      </ul>
+    </div>
+
+    <div class="container pic red">PICTURE</div>
+
+    <div class="container grid-container blue">
+      <div> 1 </div>
+      <div> 2 </div>
+      <div> 3 </div>
+      <div> 4 </div>
+      <div> 5 </div>
+      <div> 6 </div>
+      <div> 7 </div>
+      <div> 8 </div>
+    </div>
+
+    <div class='container footer white-green'>FOOTER</div>
+  </body>
+</html>

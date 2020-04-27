@@ -1,0 +1,13 @@
+html, body {
+  background-color: #ffeead;
+  margin: 10px;
+}
+
+.container > div {
+  display: flex;
+  color: #ffeead;
+  background-color: #88d8b0;
+  font-size: 2em;
+  align-items: center;
+  justify-content: center;
+}

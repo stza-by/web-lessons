@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="basic.css">
+  <title>Document</title>
+
+  <style>
+
+    html, body {
+      height: 100%;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0 5px 0 5px;
+    }
+
+    .grid-container {
+      height: 100%;
+      display: grid;
+      grid-template: 40px 1fr 40px / repeat(12, 1fr);
+      gap: 4px;
+
+      grid-template-areas: 
+        ". h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "m f f f f f f f f f f f";
+    }
+
+    .header {
+      /* grid-column: 1 / -1; */
+      grid-area: h;
+    }
+
+    .menu {
+      /* grid-column: 1 / 2; */
+      grid-area: m;
+    }
+
+    .content {
+      /* grid-column: 2 / -1; */
+      grid-area: c;
+    }
+
+    .footer {
+      /* grid-column: 1 / -1; */
+      grid-area: f
+    }
+  </style>
+</head>
+<body>
+
+  <div class='container grid-container'>
+    <div class="header">ЗАГОЛОВОК</div>
+    <div class="menu">МЕНЮ</div>
+    <div class="content">КОНТЕНТ</div>
+    <div class="footer">ПОДВАЛ</div>
+  </div>
+  
+</body>
+</html>

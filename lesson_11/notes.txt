@@ -1,0 +1,14 @@
+basic.css - базовые стили для всех файлов
+
+1. CSS GRID basic (grid.html)
+
+2. GRID Area (grid2.html)
+
+3. auto-fit & minimax (grid3.html)
+
+4. practice 1 (grid4.html)
+
+5. practice 2 (practice/index.html)
+
+
+live - то что писал на занятии

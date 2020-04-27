@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .grid-container {
+      display: grid;
+      gap: 5px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-auto-rows: 200px;
+      grid-auto-flow: dense;
+    }
+
+    .bg {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .simple {
+      background-image: url('./images/tree.jpg');
+    }
+
+    .h-2 {
+      background-image: url('./images/boat.jpg');
+      grid-column: span 2;
+    }
+
+    .v-2 {
+      background-image: url('./images/pier.jpg');
+      grid-row: span 2;
+    } 
+
+    .big {
+      background-image: url('./images/tree-2.jpg');
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class='container grid-container'>
+    <div class='bg simple'>1</div>
+    <div class='bg h-2'>2</div>
+    <div class='bg simple'>3</div>
+    <div class='bg v-2'>4</div>
+    <div class='bg big'>5</div>
+    <div class='bg simple'>6</div>
+  </div>
+  
+</body>
+</html>
