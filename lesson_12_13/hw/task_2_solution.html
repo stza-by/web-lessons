@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task2</title>
+  </head>
+  <body>
+    <script>
+      function createNewHeader(headerType, innerText) {
+        const newHeader = document.createElement(headerType);
+        newHeader.innerText = innerText;
+        document.body.append(newHeader);
+      }
+
+      createNewHeader('h1', 'One');
+      createNewHeader('h2', 'Two');
+      createNewHeader('h3', 'Three');
+    </script>
+  </body>
+</html>

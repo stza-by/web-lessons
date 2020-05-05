@@ -122,21 +122,111 @@
 
 
 // Create new element
-const newElement = document.createElement('li');
+// const newElement = document.createElement('li');
 
-newElement.className = 'list-group-item';
-newElement.id = 'my-id';
-newElement.classList.add('bro', 'bro2');
+// newElement.className = 'list-group-item';
+// newElement.id = 'my-id';
+// newElement.classList.add('bro', 'bro2');
 
-newElement.setAttribute('myOwnAttr', 'Hello !!');
+// newElement.setAttribute('myOwnAttr', 'Hello !!');
 
-const newLiText = document.createTextNode('Элемент 5');
-newElement.appendChild(newLiText);
+// const newLiText = document.createTextNode('Элемент 5');
+// newElement.appendChild(newLiText);
 
-console.log(newElement);
-console.dir(newElement);
+// console.log(newElement);
+// console.dir(newElement);
 
-const items = document.querySelector('#items');
-items.appendChild(newElement);
+// const items = document.querySelector('#items');
+// items.appendChild(newElement);
 
 // insertBefore, insertAfter
+
+
+// ---- LESSON 13 ----------
+
+// const newListItem = document.createElement('li');
+// newListItem.className = 'list-group-item';
+// newListItem.innerText = 'Новый элемент';
+
+// const newListItem2 = document.createElement('li');
+// newListItem2.className = 'list-group-item';
+// newListItem2.innerText = 'Новый элемент #2';
+
+// const list = document.querySelector('#items');
+
+// append prepend before after replaceWith
+
+// list.prepend(newListItem);
+// list.append(newListItem2);
+
+// const h2Before = document.createElement('h2');
+// h2Before.innerText = 'Before';
+
+// const h2After = document.createElement('h2');
+// h2After.innerText = 'After';
+
+// list.before(h2Before);
+// list.after(h2After);
+
+// const replace = document.createElement('h2');
+// replace.innerText = 'List';
+
+// list.replaceWith(replace);
+
+// replace.remove();
+
+// Events
+
+// function buttonClicked(event) {
+//   console.log('Button clicked ');
+//   document.body.style.backgroundColor = '#f4f4f4';
+//   console.log(event);
+
+//   console.log(event.target);
+//   console.log(event.target.classList);
+//   console.log(event.target.classList);
+// }
+
+const btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', buttonClicked);
+
+// btn.addEventListener('click', function () {
+//   console.log('function expression');
+// });
+
+// btn.addEventListener('click', () => {
+//   console.log('Arrow function');
+// });
+
+btn.addEventListener('click', deleteLastListElement);
+
+function deleteLastListElement() {
+  const list = document.querySelector('#items');
+
+  if (list.lastElementChild) {
+    list.lastElementChild.remove();
+  } else {
+    alert('Элементы закончились');
+  }
+}
+
+const theForm = document.querySelector('#the-form');
+
+theForm.lastElementChild.addEventListener('click', addNewListItem);
+
+function addNewListItem(event) {
+
+  if(theForm.firstElementChild.value === '') {
+    alert('Ничего не введено');
+    return;
+  }
+
+  const newListItem = document.createElement('li');
+  console.dir(theForm.firstElementChild)
+  newListItem.innerText = theForm.firstElementChild.value;
+  newListItem.className = 'list-group-item';
+
+  document.querySelector('#items').append(newListItem);
+  theForm.firstElementChild.value = '';
+}
