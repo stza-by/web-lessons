@@ -214,20 +214,44 @@
 //   }
 // });
 
-const btn = document.querySelector('#btn');
-const container = document.querySelectorAll('.container');
+// const btn = document.querySelector('#btn');
+// const container = document.querySelectorAll('.container');
 
-console.log(container);
+// console.log(container);
 
 
 
-container[1].addEventListener('click', (event) => {
-  console.log('Я нажал на контейнер');
-  console.log(event.target);
-  console.log(event.currentTarget);
-})
+// container[1].addEventListener('click', (event) => {
+//   console.log('Я нажал на контейнер');
+//   console.log(event.target);
+//   console.log(event.currentTarget);
+// })
 
-btn.addEventListener('click', (newEvent) => {
-  console.log(newEvent.target);
-  console.log(newEvent.currentTarget);
-});
+// btn.addEventListener('click', (newEvent) => {
+//   console.log(newEvent.target);
+//   console.log(newEvent.currentTarget);
+// });
+
+const filterInput = document.querySelector('#filter');
+const filterInput2 = document.getElementById('filter');
+
+
+// callback
+function eventHandler(event){
+ 
+    const text = event.target.value; 
+    const listItems = document.querySelectorAll('.list-group-item');
+  
+    for(let item of listItems) {
+      console.log(item.textContent);
+  
+      if(item.textContent.indexOf(text) !== -1){
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    }
+  
+}
+
+filterInput.addEventListener('keyup', eventHandler);

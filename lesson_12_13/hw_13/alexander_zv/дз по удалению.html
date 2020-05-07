@@ -22,30 +22,22 @@
     <div class="container">
       <div id="main" class="card card-body">
         <h2 class="title">Добавить элемент</h2>
-
-        <form class="form-inline mb-3">
-          <input id='text-input' type="text" class="form-control mr-2 mb-2" />
-          <input id='add-button' type="button" class="btn btn-dark mb-2" value="Добавить" />
+        <form id='the-form' class="form-inline mb-3">
+          <input type="text" class="form-control mr-2 mb-2" />
+          <input type="button" class="btn btn-dark mb-2" value="Добавить" />
         </form>
-
         <h2 class="title">Список:</h2>
-
-        <div class="mb-3">
-          <input class='form-control' type="text" id="filter" placeholder="Поиск элементов...">
-        </div>
-
         <ul id="items" class="list-group">
-          <!-- RJvvtynfhb -->
-          <li class="list-group-item">Элемент 1</li>
-          <li class="list-group-item">Элемент 2</li>
-          <li class="list-group-item">Элемент 3</li>
-          <li class="list-group-item">Элемент 4</li>
+          <li class="list-group-item" id="dell1">Элемент 1 <button id="dell1">удалить</button></li>
+          <li class="list-group-item" id="dell2">Элемент 2 <button id="dell2">удалить</button></li>
+          <li class="list-group-item" id="dell3">Элемент 3 <button id="dell3">удалить</button></li>
+          <li class="list-group-item" id="dell4">Элемент 4 <button id="dell4">удалить</button></li>
         </ul>
 
-        <button id='btn' class='btn btn-dark mt-3'>Нажми на меня</button>
+        <button class="btn btn-dark btn-block" id="btn" onclick="buttonClicked()">Нажми на меня</button>
       </div>
     </div>
 
-    <script src="./index.js"></script>
+    <script src="./дз по удалению.js"></script>
   </body>
 </html>

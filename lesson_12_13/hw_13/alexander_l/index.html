@@ -22,27 +22,19 @@
     <div class="container">
       <div id="main" class="card card-body">
         <h2 class="title">Добавить элемент</h2>
-
-        <form class="form-inline mb-3">
-          <input id='text-input' type="text" class="form-control mr-2 mb-2" />
-          <input id='add-button' type="button" class="btn btn-dark mb-2" value="Добавить" />
+        <form id="the-form" class="form-inline mb-3">
+          <input type="text" class="form-control mr-2 mb-2" />
+          <input type="button" class="btn btn-dark mb-2" value="Добавить" />
         </form>
-
         <h2 class="title">Список:</h2>
-
-        <div class="mb-3">
-          <input class='form-control' type="text" id="filter" placeholder="Поиск элементов...">
-        </div>
-
         <ul id="items" class="list-group">
-          <!-- RJvvtynfhb -->
-          <li class="list-group-item">Элемент 1</li>
-          <li class="list-group-item">Элемент 2</li>
-          <li class="list-group-item">Элемент 3</li>
-          <li class="list-group-item">Элемент 4</li>
+          <li class="list-group-item">Элемент 1<button type="button" class="close">&times;</button></li>
+          <li class="list-group-item">Элемент 2<button type="button" class="close">&times;</button></li>
+          <li class="list-group-item">Элемент 3<button type="button" class="close">&times;</button></li>
+          <li class="list-group-item">Элемент 4<button type="button" class="close">&times;</button></li>
         </ul>
 
-        <button id='btn' class='btn btn-dark mt-3'>Нажми на меня</button>
+        <button class="btn btn-dark btn-block" id="btn">Нажми на меня</button>
       </div>
     </div>
 

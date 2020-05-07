@@ -230,3 +230,22 @@ function addNewListItem(event) {
   document.querySelector('#items').append(newListItem);
   theForm.firstElementChild.value = '';
 }
+
+// filter elements
+const filterInput = document.querySelector('#filter');
+
+
+filterInput.addEventListener('keyup', (event) => {
+  const listItems = document.querySelectorAll('.list-group-item');  
+  const text = event.target.value.toLowerCase();
+  
+  for(let listItem of listItems) {
+    const listItemText = listItem.firstChild.textContent;
+
+    if(listItemText.toLowerCase().includes(text)){
+      listItem.style.display = 'block';
+    } else {
+      listItem.style.display = 'none';
+    }
+  }
+})
