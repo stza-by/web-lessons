@@ -1,21 +1,20 @@
 // book Class
 class Book {
   constructor(title, author, year) {
-
     this.title = title;
     this.author = author;
     this.year = year;
 
-
-    this.id = Math.round(Math.random() * 100000000);
+    this.id = Math.round(Math.random() * 1000);
   }
 }
 
-// UI class: класс хранящий UI действия
+// UI Class: Represents UI Actions
 class UI {
-
-  static displayAllBooks() {
-    Storage.getBooks().forEach(book => UI.addBookToList(book));
+  static displayBooks() {
+    Store.getBooks().forEach(book => {
+      UI.addBookToList(book);
+    })
   }
 
   static addBookToList(book) {
@@ -23,13 +22,10 @@ class UI {
     const row = document.createElement('tr');
 
     row.innerHTML = `
-      <td>${book.title}</td>
-      <td>${book.author}</td>
-      <td>${book.year}</td>
-      <td> 
-        <button bookId=${book.id} class='delete btn btn-danger btn-sm'>x</button>
-      </td>
-    `
+     <td>${book.title}</td>
+     <td>${book.author}</td>
+     <td>${book.year}</td>
+     <td><button bookId=${book.id} class='delete btn btn-danger btn-sm'>X</button></td>`;
 
     list.append(row);
   }
@@ -38,25 +34,26 @@ class UI {
     if (element.classList.contains('delete')) {
       element.parentElement.parentElement.remove();
 
-      const bookId = element.getAttribute('bookId');
+      Store.removeBook(element.getAttribute('bookId'));
 
-      Storage.remove(Number(bookId));
-
-      UI.addMessage('Книга удалена', 'info');
+      UI.showMessage('Книга была удалена', 'info');
     }
   }
 
-  static clearForm() {
+  static clearFromFields() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
-    document.querySelector('#year').value = '';
+    document.querySelector('#year').value = ' ';
   }
 
-  static addMessage(message, messageType) {
+  static showMessage(messageText, messageColor) {
     const messageContainer = document.createElement('div');
-    messageContainer.innerText = message;
+    messageContainer.innerText = messageText;
 
-    messageContainer.className = `alert alert-${messageType}`;
+    // success, danger 
+    messageContainer.className = `alert alert-${messageColor}`;
+
+    if (document.querySelector('.alert')) document.querySelector('.alert').remove();
 
     document.querySelector('#book-form').before(messageContainer);
 
@@ -66,9 +63,8 @@ class UI {
   }
 }
 
-
-// Хранилище
-class Storage {
+// Book Storage
+class Store {
 
   static getBooks() {
     if (!localStorage.getItem('books')) {
@@ -86,26 +82,27 @@ class Storage {
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static remove(bookId) {
+  static removeBook(bookId) {
     console.log(bookId);
-    const bookArray = JSON.parse(localStorage.getItem('books'));
-    console.log(bookArray);
-    bookArray.forEach((book, index) => {
-      if(book.id === bookId) {
-        bookArray.splice(index, 1);
+
+    const books = JSON.parse(localStorage.getItem('books'));
+
+    books.forEach((book, index) => {
+      if (book.id === Number(bookId)) {
+        books.splice(index, 1);
       }
     })
-    localStorage.setItem('books', JSON.stringify(bookArray));
+
+    localStorage.setItem('books', JSON.stringify(books));
   }
 }
 
-
 // EVENTS
 
-// начальная загрузка элементов
-document.addEventListener('DOMContentLoaded', UI.displayAllBooks)
+// Event: display all books after loading
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
-// добавление нового элемента
+// Event: Add a new book
 document.querySelector('#book-form').addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -115,17 +112,20 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   const newBook = new Book(title, author, year);
 
-  Storage.addBook(newBook);
-
+  // add new book into table
   UI.addBookToList(newBook);
 
-  UI.addMessage('Книга добавлена', 'success');
+  // add book to localStorage 
+  Store.addBook(newBook);
 
-  UI.clearForm();
+  // Clear fields
+  UI.clearFromFields();
+
+  // Show message
+  UI.showMessage('Книга была добавлена', 'success');
 })
 
-// удаление элемента
+// Event: Delete a book
 document.querySelector('#book-list').addEventListener('click', (e) => {
   UI.deleteBookFromList(e.target);
 })
-

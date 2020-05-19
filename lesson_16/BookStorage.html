@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BooKStore</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="display-4 text-center">
+        Моя <span class="text-primary"> библиотека </span>
+      </h1>
+
+      <form id="book-form">
+        <div class="form-group">
+          <label for='title'>Название:</label>
+          <input id='title' type="text" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="author">Автор:</label>
+          <input id='author' type="text" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="year">Год издания:</label>
+          <input id='year' type="text" class="form-control" />
+        </div>
+
+        <input type="submit" value="Добавить книгу..." class='btn btn-primary btn-block'>
+      </form>
+
+      
+    <table class="table table-striped mt-5">
+      <thead>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>Год издания</th>
+        <th id='del-button'></th>
+      </thead>
+      
+      <tbody id='book-list'>
+      
+      </tbody>
+    </table>
+
+    </div>
+
+
+    <script src="./bookStorage.js"></script>
+  </body>
+</html>
