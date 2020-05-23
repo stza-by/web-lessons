@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <button id="get-users" class="w-100 btn btn-primary mb-3">
+        Получить пользоватлей
+      </button>
+
+      <button id="clear-users" class="w-100 btn btn-danger mb-3">
+        Очистить пользователей
+      </button>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Имя</th>
+            <th>Компания</th>
+            <th>Номер телефона</th>
+          </tr>
+        </thead>
+        <tbody id="user-data"></tbody>
+      </table>
+    </div>
+
+    <script src="async_await.js"></script>
+  </body>
+</html>
