@@ -1,21 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// // JSX React Element
-// const simpleReactElement = <h1>Hello WORLD</h1>;
+const str = 'World';
 
-// const alternative = React.createElement('h1', null, 'Hello world');
+const helloWorld = (
+  <div> Пример </div>
+);
 
-// console.log(simpleReactElement);
-// console.log(alternative);
+const alternative =  React.createElement('div', null, 'Hello world');
 
-// JSX React Component 
- const HelloWorldComponent = () => {
-   return <h1>Hello world</h1>
- }
+console.log(helloWorld);
 
- console.log(HelloWorldComponent);
- console.log(<HelloWorldComponent/>);
-
-//ReactDOM.render(simpleReactElement, document.getElementById('root'));
-ReactDOM.render(<HelloWorldComponent />, document.getElementById('root'));
+ReactDOM.render(alternative, document.getElementById('root'));
