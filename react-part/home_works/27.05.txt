@@ -1,0 +1,23 @@
+1. В приложении todo в списке задач отформатировать кнопки, 
+   что бы они отображались справа в строке.
+
+2. Создать компонент  ToDoListItem, который будет отвечает 
+   за отдельный элемент списка.
+
+   После изменений код компонента ToDoList должен выглядеть 
+   примерно так:
+
+const ToDoList = ({ tasks }) => {
+  const elements = tasks.map((task) => {
+    return (
+      <li className='list-group-item todo-list-item' key={task.id}>
+       <TodoListItem task={task} />
+      </li>)
+  })
+
+  return (
+    <ul className='list-group todo-list'>
+      {elements}
+    </ul>
+  )
+}
