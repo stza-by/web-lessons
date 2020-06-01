@@ -1,0 +1,4 @@
+.todo-task {
+    display: flex;
+    justify-content: space-between;
+  }

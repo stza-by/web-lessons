@@ -1,0 +1,24 @@
+.todo-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list-item-title {
+  cursor: pointer;
+  user-select: none;
+}
+
+.todo-list-item button {
+  width: 35px;
+  margin: 4px;
+}
+
+.todo-list-item-title.done {
+  text-decoration: line-through;
+}
+
+.todo-list-item-title.important {
+  color: brown;
+  font-weight: bold;
+}

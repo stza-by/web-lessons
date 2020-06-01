@@ -1,26 +1,12 @@
 import React from 'react';
-import './styles/ToDoList.css'
+import ToDoListItem from './ToDoListItem';
+import './styles/ToDoList.css';
 
-const ToDoList = ({ tasks }) => {
+const ToDoList = ({ tasks, deleteItem }) => {
 
   const elements = tasks.map((task) => {
-    const style = task.important ? { 'color': 'red' } : {}
-    return (<li className='list-group-item todo-list-item'
-      key={task.id}
-      style={style}>
-
-      <span>{task.title}</span>
-
-    
-      <span>
-      <button className='btn btn-outline-success'>
-        <i className='fa fa-exclamation' />
-      </button>
-
-      <button className='btn btn-outline-danger'>
-        <i className='fa fa-trash-o' />
-      </button>
-    </span>
+    return (<li className='list-group-item' key={task.id}>
+      <ToDoListItem task={task} deleteItem={deleteItem}/>
     </li>)
   })
 
