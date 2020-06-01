@@ -1,4 +1,4 @@
-1. Очисчить onput внутри AddTaskForm после добавления новгого элемента.
+1. Очисчить input внутри AddTaskForm после добавления новгого элемента.
 
 Прочитать:
 https://ru.reactjs.org/docs/state-and-lifecycle.html
