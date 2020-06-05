@@ -1,10 +1,7 @@
 import React from 'react';
 import './styles/AppHeader.css';
 
-const AppHeader = () => {
-
-  const done = 2;
-  const todo = 1;
+const AppHeader = ({done, todo}) => {
 
   return (
     <div className='app-header'>

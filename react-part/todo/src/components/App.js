@@ -16,17 +16,43 @@ class App extends React.Component {
         { title: 'Изучить JS', important: true, id: 1, done: true },
         { title: 'Изучить React', important: true, id: 2, done: false },
         { title: 'Заварить чай', important: false, id: 3, done: true },
-      ]
+      ],
+      searchField: ''
     }
   }
 
-  componentDidMount() {
-    console.log('componentDidMount');
+  toggleImportance = id => {
+
+    this.setState((state) => {
+      const newTasks = state.tasks.map((task) => {
+        if (task.id === id) {
+          task.important = !task.important;
+        }
+
+        return task;
+      })
+
+      return { tasks: newTasks };
+    })
   }
 
+  toggleDone = id => {
 
-  componentDidUpdate(){
-    console.log('componentDidUpdate');
+    this.setState((state) => {
+      const newTasks = state.tasks.map((task) => {
+        if (task.id === id) {
+          task.done = !task.done;
+        }
+
+        return task;
+      })
+
+      return { tasks: newTasks };
+    })
+  }
+
+  changeSearchField = searchText => {
+    this.setState({ searchField: searchText })
   }
 
   deleteItem = (id) => {
@@ -48,14 +74,28 @@ class App extends React.Component {
   }
 
   render() {
+
+    const { searchField, tasks } = this.state;
+
+    const filteredTasks = tasks.filter(task => {
+      return task.title.includes(searchField) ? true : false
+    })
+
+    const completedTasks = tasks.reduce((accum, currentTasks) => {
+      return currentTasks.done ? accum + 1 : accum;
+    }, 0);
+
     return (
       <div className='todo-app'>
-        <AppHeader className='abs' />
-        <SearchPanel />
+        <AppHeader done={completedTasks} todo={tasks.length - completedTasks} />
+        <SearchPanel changeSearchField={this.changeSearchField} />
         <ToDoList
-          tasks={this.state.tasks}
-          deleteItem={this.deleteItem} />
-          <AddTaskForm addNewTask={this.addNewTask}/>
+          tasks={filteredTasks}
+          deleteItem={this.deleteItem}
+          toggleImportance={this.toggleImportance}
+          toggleDone={this.toggleDone}
+        />
+        <AddTaskForm addNewTask={this.addNewTask} />
       </div>
     )
   }

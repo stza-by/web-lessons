@@ -2,12 +2,17 @@ import React from 'react';
 import ToDoListItem from './ToDoListItem';
 import './styles/ToDoList.css';
 
-const ToDoList = ({ tasks, deleteItem }) => {
+const ToDoList = ({ deleteItem, tasks, toggleImportance, toggleDone }) => {
 
   const elements = tasks.map((task) => {
-    return (<li className='list-group-item' key={task.id}>
-      <ToDoListItem task={task} deleteItem={deleteItem}/>
-    </li>)
+    return (
+      <li className='list-group-item' key={task.id}>
+        <ToDoListItem
+          task={task}
+          deleteItem={deleteItem}
+          toggleImportance={toggleImportance}
+          toggleDone={toggleDone} />
+      </li>)
   })
 
   return (

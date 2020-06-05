@@ -17,9 +17,11 @@ export default class AddTaskForm extends React.Component {
   onSubmitHandler = (e) => {
     e.preventDefault();
     const { title } = this.state;
-    const id = Math.random;
+    const id = Math.random();
 
     this.props.addNewTask(title, id);
+
+    this.setState({title: ''});
   }
 
   render() {
@@ -29,6 +31,7 @@ export default class AddTaskForm extends React.Component {
     return (
       <form className='form' onSubmit={this.onSubmitHandler}>
         <input
+          value={this.state.title}
           onChange={this.onChangeHandler}
           placeholder='Имя задачи...'
           type='text'
