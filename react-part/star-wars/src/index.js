@@ -1,18 +1,7 @@
-import SwapiService from './services/swapi';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-SwapiService.getPlanets().then(result => {
-  console.log(result);
-});
-
-SwapiService.getPlanet().then(result => {
-  console.log(result);
-})
-
-SwapiService.getPeople().then((result) => {
-  console.log(result);
-})
+import App from './components/App';
 
 
-SwapiService.getPerson(31).then(result => {
-  console.log(result);
-})
+ReactDOM.render(<App/>, document.getElementById('root'));
