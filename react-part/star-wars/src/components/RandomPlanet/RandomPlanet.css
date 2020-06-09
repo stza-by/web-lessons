@@ -1,0 +1,26 @@
+.random-planet {
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+
+.random-planet img {
+  width: 150px;
+  height: 150px;
+  margin-right: 1em;
+  border-radius: 10px;
+}
+
+.random-planet .body {
+  flex: 1;
+}
+
+.random-planet .list-group-item {
+  padding: 0.25rem;
+}
+
+.random-planet h4 {
+  padding-left: 0.25rem;
+}
+
+
