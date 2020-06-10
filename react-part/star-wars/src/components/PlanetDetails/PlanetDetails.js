@@ -1,12 +1,30 @@
 import React from 'react'
 import './PlanetDetails.css';
 
-export default function PlanetDetails() {
+export default function PlanetDetails({planet}) {
+
+  if(!planet){
+    return null;
+  }
+
+
+  console.log(planet);
+
+  const {
+    id, 
+    climate, 
+    diameter, 
+    name, 
+    population, 
+    rotation_period,
+    surface_water } = planet;
+
   return (
     <div className='planet-details card'>
 
+      
       <img className="card-img-top"
-        src="https://starwars-visualguide.com/assets/img/planets/2.jpg"
+        src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
          alt="Изображение планеты"/>
 
 
