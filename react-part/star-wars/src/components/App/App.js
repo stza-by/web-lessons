@@ -1,53 +1,69 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar';
 import RandomPlanet from '../RandomPlanet';
+import Row from '../Row';
 
 import ItemList from '../ItemList';
-import PlanetDetails from '../PlanetDetails';
+import ItemDetails from '../ItemDetails';
 import ErrorIndicator from '../ErrorIndicator';
+import SwapiService from '../../services/swapi';
 
 import './App.css';
+import Navbar from '../NavBar/Navbar';
 
 export default class App extends Component {
 
   state = {
-    isError: false,
     currentPlanet: null
   }
 
-
   setPlanet = (planet) => {
-    this.setState({currentPlanet: planet})
+    this.setState({ currentPlanet: planet })
   }
-
-  componentDidCatch(error) {
-    console.log('componentDidCatch ', error);
-    this.setState({ isError: true })
-  }
-
 
   render() {
 
-
-    if (this.state.isError) {
-      return <ErrorIndicator />
-    }
+    const { currentPlanet } = this.state;
 
     return (
       <div className='container'>
-        <NavBar />
-         <RandomPlanet />
+        <NavBar>
+        
+        </NavBar>
+        <RandomPlanet />
 
-        <div className='row'>
+        <Row
+          left={<ItemList
+            setItem={this.setPlanet}
+            currentItem={currentPlanet || {}}
+            getData={SwapiService.getPlanets}
+            renderItem={(item) => item.name}
+          />}
+          right={<ItemDetails 
+                item={currentPlanet}
+                title={currentPlanet ? currentPlanet.name : ''}
+                renderedFields={{climate: 'Климат', population: 'Население'}}
+                getPicUrl={() =>SwapiService.getPlanetPictureByURL(currentPlanet.url)} />}
+        />
+        <Row
+          left={<ItemList
+            setItem={(item) => console.log('Person', item)}
+            currentItem={{}}
+            getData={SwapiService.getPeople}
+            renderItem={(item) => item.name}
+          />}
+          right='Пусто'
+        />
+        <Row
+          left={<ItemList
+            setItem={(item => console.log('Starship', item))}
+            currentItem={{}}
+            getData={SwapiService.getStarships}
+            renderItem={(item) => item.name}
+          />}
+          right='ПУсто'
+        />
 
-          <div className='col-12 col-md-6'>
-            <ItemList setPlanet={this.setPlanet} />
-          </div>
-
-          <div className='col-12 col-md-6'>
-            <PlanetDetails planet={this.state.currentPlanet}/>
-          </div>
-        </div>
       </div>
     )
   }

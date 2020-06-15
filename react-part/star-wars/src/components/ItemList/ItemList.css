@@ -1,4 +1,4 @@
-.item-list .list-group-item {
+.item-list .list-group-item,.page-item {
   cursor: pointer;
 }
 

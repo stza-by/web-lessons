@@ -1,7 +1,10 @@
 import React from 'react'
 import './NavBar.css';
 
-export default function Navbar() {
+export default function Navbar(props) {
+
+ 
+
   return (
     <div className='nav-bar d-flex'>
 

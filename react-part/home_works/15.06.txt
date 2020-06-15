@@ -1,0 +1,5 @@
+1. Прочитать статьи:
+https://ru.reactjs.org/docs/error-boundaries.html
+
+2. Завершить реализацию компонента ItemDetails
+

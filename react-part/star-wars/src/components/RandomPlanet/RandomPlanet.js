@@ -29,17 +29,17 @@ export default class RandomPlanet extends Component {
 
   componentDidMount() {
 
-    console.log('componentDidMount');
+
     this.setRandomPlanet();
     this.interval = setInterval(this.setRandomPlanet, 2000);
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log('componentDidUpdate');
+    
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount');
+   
 
     if(this.interval) {
       clearInterval(this.interval);
@@ -96,7 +96,7 @@ export default class RandomPlanet extends Component {
 
   render() {
 
-    console.log('render');
+  
     const { isLoading, isError } = this.state;
 
     if (isError) return <ErrorIndicator />
