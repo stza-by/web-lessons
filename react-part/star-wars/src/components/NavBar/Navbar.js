@@ -1,21 +1,31 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './NavBar.css';
+
 
 export default function Navbar(props) {
 
- 
+
 
   return (
     <div className='nav-bar d-flex'>
 
-      <h3> <a href='#'>Звездные войны</a></h3>
+      <h3>
+        <Link to='/'>Звездные войны</Link>
+      </h3>
 
       <ul className='d-flex'>
-        <li><a href="#">Персонажи</a></li>
+        <li>
+          <Link to='/people'>Персонажи</Link>
+        </li>
 
-        <li> <a href="#">Планеты</a></li>
+        <li>
+          <Link to='/planets'>Планеты</Link>
+        </li>
 
-        <li> <a href="#">Корабли</a></li>
+        <li>
+          <Link to='/starship'>Корабли</Link>
+        </li>
       </ul>
     </div>
   )

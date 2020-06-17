@@ -1,41 +1,58 @@
-import React from 'react'
+import React, {Component } from 'react'
 import './ItemDetails.css';
+import noImg from '../../resources/images/noImage.png';
 
-export default function ItemDetails({ item, getPicUrl, renderedFields, title }) {
+export default class ItemDetails extends Component {
 
-  if (!item) {
-    return null;
+  state = {
+    imgUrl: '' 
   }
 
-  return (
-    <div className='planet-details card'>
+  componentDidMount() {
+    const {getPicUrl, item} = this.props;
+    this.setState({imgUrl: getPicUrl(item.url)})
+  }
 
-      <img className="card-img-top"
-        src={getPicUrl()}
-        alt="Изображение планеты"
-        onLoad={() => console.log('image loaded')}
-        onError={() => { throw new Error('Ошибка')}}
-      />
+  componentDidUpdate(prevProps) {
+    if(prevProps.item.url !== this.props.item.url){
+      this.setState({imgUrl: this.props.getPicUrl(this.props.item.url)})
+    }
+  }
 
-      <div className='card-body'>
+  render() {
+    const {imgUrl} = this.state;
+    const { item, title, renderedFields } = this.props;
 
-        <h3>{title}</h3>
+    if (!item) {
+      return null;
+    }
+
+    return (
+      <div className='planet-details card'>
+
+        <img className="card-img-top"
+          src={imgUrl}
+          alt="Изображение планеты"
+          onError={() => this.setState({imgUrl: noImg})}
+        />
+
+        <div className='card-body'>
+
+          <h3>{title}</h3>
 
 
-        <ul className='list-group'>
-          {renderedFields.entries().map(keyVal => {
-              console.log(keyVal);
-            
-            {/* return (
-              <li className='list-group-item'>
-                <span>{field}: </span>
-                <span>Население: </span>
+          <ul className='list-group'>
+            {renderedFields.map((renderedField) => (
+              <li key={renderedField.field} className='list-group-item'>
+                <span>{renderedField.label}: </span>
+                <span>{item[renderedField.field]}</span>
               </li>
-            ) */}
-          })}
-
-        </ul>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
+
+
 }
