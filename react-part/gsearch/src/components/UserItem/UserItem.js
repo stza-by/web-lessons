@@ -1,5 +1,6 @@
 import React from 'react'
 import './UserItem.css';
+import { Link } from 'react-router-dom';
 
 export const UserItem = ({user }) => {
   const {login, avatar_url, html_url } = user;
@@ -9,9 +10,9 @@ export const UserItem = ({user }) => {
 
       <img className='card-img-top' src={avatar_url} alt="Аватар" />
       <div class="card-body">
-        <a target='_blank' href={html_url} class="card-link">
+        <Link to={`/user/${login}`} class="card-link">
           Профиль
-        </a>
+        </Link>
       </div>
     </div>
   )
