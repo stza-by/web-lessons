@@ -1,98 +1,96 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar';
 import Users from '../Users';
 import Spinner from '../Spinner';
 import Search from '../Search';
 import User from '../User';
+import NotFoundPage from '../NotFoundPage';
 import GitHubApi from '../../services/GitHubApi';
 
 import { ALERT_LEVELS } from '../../utils/constants';
 
-export default class App extends Component {
+export default function App() {
 
-  state = {
-    users: [],
-    user: {},
-    isLoading: false,
-    search: '',
-    alert: {
-      message: '',
-      level: undefined
-    }
-  }
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [search, setSearch] = useState('');
+  const [alert, setAlert] = useState({ message:'', level: undefined });
 
-  getUser = (login) => {
-    this.setState({ isLoading: true });
+
+  const getUserData = (login) => {
+    setIsLoading(true);
     GitHubApi.getUserData(login).then(result => {
-      this.setState({ user: result, isLoading: false })
+      setUser(result);
+      setIsLoading(false);
     })
   }
 
-  onSearchClickHandler = (e) => {
-    const { search } = this.state;
-
+  const onSearchClickHandler = (e) => {
     if (search.length) {
-      this.setState({ isLoading: true })
+      setIsLoading(true);
       GitHubApi.searchUsers(search).then(result => {
-        this.setState({ users: result, isLoading: false })
+        setUsers(result);
+        setIsLoading(false);
       })
     } else {
-      this.setState({ alert: { message: 'Поле ввода не заполнено', level: ALERT_LEVELS.danger } });
+      setAlert({ message: 'Поле ввода не заполнено', level: ALERT_LEVELS.danger  })
     }
   }
 
-  onSearchChangeHandler = (value) => {
-    this.setState({ search: value })
+  const onSearchChangeHandler = (value) => {
+    setSearch(value)
   }
 
-  onClearHandler = () => {
-    this.setState({ search: '', users: [] })
+  const onClearHandler = () => {
+    setSearch('');
+    setUsers([]);
   }
 
-  render() {
+  return (
+    <Fragment>
+      <Router>
+        <Navbar />
 
-    const { isLoading, users, user, search, alert: { message, level } } = this.state;
-    return (
-      <Fragment>
-        <Router>
-          <Navbar />
+        <div className='container'>
 
-          <div className='container'>
+          {console.log(alert)}
+          {alert.message &&
+            (<div className={`alert alert-${alert.level} mt-3`}>
+              {alert.message}
+              <i className="fas fa-times-circle float-right pt-1"
+                onClick={() => setAlert( { message: '', level: undefined } )}></i>
+            </div>)
+          }
 
-            {message &&
-              (<div className={`alert alert-${level} mt-3`}>
-                {message}
-                <i className="fas fa-times-circle float-right pt-1"
-                  onClick={() => this.setState({ alert: { message: '', level: undefined } })}></i>
-              </div>)
-            }
+          <Switch>
 
-            <Switch>
+            <Route exact path='/' render={() => (
+              <Fragment>
+                <Search onSearchChangeHandler={onSearchChangeHandler}
+                  onSearchClickHandler={onSearchClickHandler}
+                  onClearHandler={onClearHandler}
+                  search={search}
+                  isClear={users.length ? false : true} />
 
-              <Route exact path='/' render={() => (
-                <Fragment>
-                  <Search onSearchChangeHandler={this.onSearchChangeHandler}
-                    onSearchClickHandler={this.onSearchClickHandler}
-                    onClearHandler={this.onClearHandler}
-                    search={search}
-                    isClear={users.length ? false : true} />
+                {isLoading ? <Spinner /> : <Users users={users} />}
+              </Fragment>
+            )} />
 
-                  {isLoading ? <Spinner /> : <Users users={users} />}
-                </Fragment>
-              )} />
+            <Route exact path='/user/:login' render={(props) => (
+              <User {...props}
+                user={user}
+                isLoading={isLoading}
+                getUser={getUserData} />
+            )} />
 
-              <Route exact path='/user/:login' render={(props) => (
-                <User {...props}
-                  user={user}
-                  isLoading={isLoading}
-                  getUser={this.getUser} />
-              )} />
+            <Route component={NotFoundPage} />
 
-            </Switch>
-          </div>
-        </Router>
-      </Fragment>
-    )
-  }
+          </Switch>
+        </div>
+      </Router>
+    </Fragment>
+  )
 }
+

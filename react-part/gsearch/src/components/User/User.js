@@ -1,18 +1,64 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
-export class User extends Component {
+import './User.css';
 
-  componentDidMount() {
+export function User({ user, getUser,match }) {
 
-    this.props.getUser(this.props.match.params.login);
-  }
+  useEffect(() => {
+    getUser(match.params.login);
+  }, [])
+
+  const {
+    avatar_url,
+    bio,
+    company,
+    html_url,
+    location,
+    login,
+    name,
+  } = user;
+
+  return (
+
+    <div >
+      <div className='btn btn-light m-2'><Link to='/'>Вернуться </Link></div>
+
+      <div className='row border border-primary'>
+
+        <div className='col-12 col-md-6 left-side'>
+
+          <img className='rounded-circle mb-2'
+            src={avatar_url}
+            style={{ width: '150px' }}
+          />
+
+          <h1>{name}</h1>
+
+          <p>Город: {location}</p>
+        </div>
+
+        <div className='col-12 col-md-6 right-side'>
+          <h3>Логин: {login} </h3>
+
+          {bio && (
+            <Fragment>
+              <h4>БИО</h4>
+              <p>{bio}</p>
+            </Fragment>
+          )}
 
 
-  render() {
+          <ul>
+            {company && <li>
+              <strong>Компания:</strong> {company}
+            </li>}
+          </ul>
 
-    console.log(this.props);
-    return (
-      <h1>{this.props.user.name}</h1>
-    );
-  }
+          <a className='btn btn-primary' href={html_url} target='_blank'>
+            Открыть профиль на GitHub</a>
+        </div>
+      </div>
+    </div>
+  );
 }

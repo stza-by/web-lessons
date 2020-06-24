@@ -1,17 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import UserItem from '../UserItem';
 import './Users.css';
 
-export default class Users extends Component {
+export default function Users({ users }) {
 
-  render() {
-
-    const {users} = this.props;
-
-    return (
-      <div className='user-container'>
-        {users.map(user => (<UserItem key={user.id} user={user}/>))}
-      </div>
-    )
-  }
+  return (
+    <div className='user-container'>
+      {users.map(user => (<UserItem key={user.id} user={user} />))}
+    </div>
+  )
 }
