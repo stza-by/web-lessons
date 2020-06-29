@@ -1,0 +1,12 @@
+{
+  "presets": ["@babel/env", "@babel/react"]
+}
+
+
+// {
+//   "plugins": [
+//     "@babel/transform-classes",
+//     "@babel/transform-block-scoping",
+//     "@babel/transform-template-literals"
+//   ]
+// }
